@@ -19,7 +19,7 @@ public:
     virtual ~FileSystemObject() = default;
     // Getters and Setters
     string getName() const;
-    chrono::system_clock::time_point getLastModified() const;
+    system_clock::time_point getLastModified() const;
     void setLastModified(system_clock::time_point time);
 };
 
