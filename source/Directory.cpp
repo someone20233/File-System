@@ -1,3 +1,4 @@
+#include "../header/File.h"
 #include "../header/Directory.h"
 #include <stdexcept>
 
@@ -37,4 +38,17 @@ vector<string> Directory::listContents() const {
 // Getter for parent
 Directory* Directory::getParent() const {
     return parent;
+}
+
+// Get total size of all items in the directory
+size_t Directory::getTotalSize() const {
+    size_t totalSize = 0;
+    for (const auto& pair : contents) {
+        if (File* file = dynamic_cast<File*>(pair.second.get())) {
+            totalSize += file->read().size();
+        } else if (Directory* dir = dynamic_cast<Directory*>(pair.second.get())) {
+            totalSize += dir->getTotalSize();
+        }
+    }
+    return totalSize;
 }

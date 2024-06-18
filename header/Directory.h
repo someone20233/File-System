@@ -23,6 +23,7 @@ public:
     FileSystemObject* getObject(const std::string& name) const; // Get object by name
     vector<string> listContents() const; // List names of objects in directory
     Directory* getParent() const; // Getter for parent
+    size_t getTotalSize() const; // Get total size of all items in the directory
 };
 
 #endif // DIRECTORY_H
