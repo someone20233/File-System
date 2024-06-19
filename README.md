@@ -27,7 +27,10 @@ cmake --build .
 .\Debug\filesystem_tests.exe
 ```
 ![Screenshot 2024-06-19 152251](https://github.com/someone20233/File-System/assets/128719291/cb127dee-dbdd-4a39-9368-ef654450d37c)
-
+* Run the Program.
+```bash
+.\Debug\filesystem.exe
+```
 
 # Execution (Manual)
 * Be on the src directory of the project; compile the program and run it.
