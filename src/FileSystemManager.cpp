@@ -1,4 +1,4 @@
-#include "../header/FileSystemManager.h"
+#include "../include/FileSystemManager.h"
 #include <sstream>
 #include <regex>
 #include <iostream>
@@ -62,8 +62,9 @@ FileDescriptor* FileSystemManager::openFile(const string& name) {
         FileDescriptor* fdPtr = fd.get();
         fileDescriptors[name] = move(fd);
         return fdPtr;
+    } else {
+        throw runtime_error("Error: File not found.");
     }
-    return nullptr; // File not found
 }
 
 // Function to close a file
@@ -157,11 +158,11 @@ string FileSystemManager::getCurrentDirectoryPath() const {
     string path;
     const Directory* dir = currentDirectory;
 
-    while (dir != nullptr) {
+    while (dir != nullptr && dir != root.get()) {
         string dirName = dir->getName();
         path = "/" + dirName + path;
         dir = dir->getParent();
     }
 
-    return path.empty() ? "/" : path;
+    return path.empty() ? "/" : path; // Ensuring root path remains "/"
 }

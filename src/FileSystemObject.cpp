@@ -1,4 +1,4 @@
-#include "../header/FileSystemObject.h"
+#include "../include/FileSystemObject.h"
 
 // Constructor for FileSystemObject
 FileSystemObject::FileSystemObject(const string& name): name(name), lastModified(system_clock::now()) {

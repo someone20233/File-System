@@ -1,5 +1,5 @@
-#include "../header/File.h"
-#include "../header/Directory.h"
+#include "../include/File.h"
+#include "../include/Directory.h"
 #include <stdexcept>
 
 // Constructor

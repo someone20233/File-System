@@ -3,6 +3,7 @@
     "*.dart": "dart",
     "xstring": "cpp",
     "memory": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "iomanip": "cpp"
   }
 }
